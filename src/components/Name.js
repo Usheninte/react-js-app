@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 
-class App extends Component {
+class Name extends Component {
 
   render() {
     
@@ -12,12 +11,11 @@ class App extends Component {
 
     return (
       <div style={finesse}>
-        <h1>Hello</h1>
-        <h3>My name is {name}</h3>
+        <h3>Usheninte</h3>
       </div>
     );
   
   }
 }
 
-export default App;
+export default Name;
