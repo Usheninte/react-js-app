@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
-import '../App.css';
 
 class Name extends Component {
+
+  componentDidMount() {
+    console.log('mounted');
+  }
 
   render() {
     
     var finesse = {
-      textAlign: 'center';
+      textAlign: 'center'
     }
 
     return (
       <div style={finesse}>
-        <h3>Usheninte</h3>
+        Usheninte
       </div>
     );
   
