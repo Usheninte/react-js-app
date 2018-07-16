@@ -10,7 +10,7 @@ class Name extends Component {
     
     var finesse = {
       textAlign: 'center'
-    }
+    };
 
     return (
       <div style={finesse}>

@@ -12,12 +12,12 @@ class App extends Component {
     
     var finesse = {
       textAlign: 'center'
-    }
+    };
 
     return (
       <div style={finesse}>
         <h1>Hello</h1>
-        <h3>My name is {Name}</h3>
+        <h3>My name is <Name /> </h3>
       </div>
     );
   
