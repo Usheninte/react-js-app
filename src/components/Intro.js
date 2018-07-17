@@ -14,8 +14,19 @@ class Intro extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      greet: 'Habari za Asubuhi!'
+      user_name: 'Usheninte',
+      interest1: '...',
+      interest2: '...'
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      user_name: 'Ninte',
+      interest1: 'Poet',
+      interest2: 'Coder'
+    })
   }
 
   componentDidMount() {
@@ -41,13 +52,16 @@ class Intro extends Component {
       <div style={finesse}>
         <h1>Hello</h1>
         <br />
-        <h3>My name is</h3>
-        <button onClick={() => { alert("I am Usheninte, The African!") }}> 
+        <p>My name is</p>
+        <h2>{this.state.user_name}</h2>
+        <p>I am a {this.state.interest1} & a {this.state.interest2}</p>
+        {/* <button onClick={() => { alert("I am Usheninte, The African!") }}>  */}
         {/* <button onClick={this.alertUser}> */}
-          <h3><Name /></h3> 
+        <button onClick={this.handleClick}>
+          <h4>Click Me!</h4> 
         </button>
-        <br /><br /><br />
-        {this.state.greet}
+        <br />
+        {/* <h4><a href="#">Refresh Page</a></h4> */}
       </div>
     );
   
