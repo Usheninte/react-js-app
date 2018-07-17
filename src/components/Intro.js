@@ -4,6 +4,20 @@ import Name from './Name';
 
 class Intro extends Component {
 
+  /* constructor(props) {
+    super(props);
+    this.state = {
+      greet: ['Welcome', 'To', 'My', 'Dummy', 'React App']
+    }
+  } */
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      greet: 'Habari za Asubuhi!'
+    }
+  }
+
   componentDidMount() {
     console.log('mounted');
   }
@@ -18,9 +32,10 @@ class Intro extends Component {
       textAlign: 'center'
     };
     
-    const salutation = ['Welcome', 'To', 'My', 'Dummy', 'React App'].map(greet => {
-      return <p key={greet}>{greet}</p>;
-    });
+    /* let greet = this.state.greet;
+    const salutation = greet.map(hello => {
+      return <p key={hello}>{hello}</p>;
+    }); */
 
     return (
       <div style={finesse}>
@@ -32,7 +47,7 @@ class Intro extends Component {
           <h3><Name /></h3> 
         </button>
         <br /><br /><br />
-        {salutation}
+        {this.state.greet}
       </div>
     );
   
