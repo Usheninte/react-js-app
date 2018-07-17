@@ -18,7 +18,7 @@ class App extends Component {
       textAlign: 'center'
     };
     
-    var salutation = ['Welcome', 'To', 'My', 'React App'].map(function(greet) {
+    const salutation = ['Welcome', 'To', 'My', 'React App'].map(greet => {
       return <p key={greet}>{greet}</p>;
     });
 
