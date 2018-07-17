@@ -8,9 +8,9 @@ class App extends Component {
     console.log('mounted');
   }
 
-  alertUser() {
+  /* alertUser() {
     alert("I am Usheninte, The African!");
-  }
+  } */
 
   render() {
     
@@ -18,7 +18,7 @@ class App extends Component {
       textAlign: 'center'
     };
     
-    const salutation = ['Welcome', 'To', 'My', 'React App'].map(greet => {
+    const salutation = ['Welcome', 'To', 'My', 'Dummy', 'React App'].map(greet => {
       return <p key={greet}>{greet}</p>;
     });
 
@@ -27,8 +27,8 @@ class App extends Component {
         <h1>Hello</h1>
         <br />
         <h3>My name is</h3>
-        {/* <button onClick={() => { console.log("I am Usheninte, The African!") }}> */}
-        <button onClick={this.alertUser}>
+        <button onClick={() => { alert("I am Usheninte, The African!") }}> 
+        {/* <button onClick={this.alertUser}> */}
           <h3><Name /></h3> 
         </button>
         <br /><br /><br />
