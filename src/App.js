@@ -18,6 +18,9 @@ class App extends Component {
       <div style={finesse}>
         <h1>Hello</h1>
         <h3>My name is <Name /> </h3>
+        <button onClick={() => { console.log("Usheninte, The African!") }}>
+          <Name /> 
+        </button>
       </div>
     );
   
