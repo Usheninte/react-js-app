@@ -19,7 +19,12 @@ class Name extends Component {
 
     return (
       <h4 style={finesse}>
-        {user_name}
+        {user_name ? user_name : 'No User Here'}
+        {/* 
+          1. if the value before the question mark is true
+          2. display the value after the question mark
+          3. otherwise display the value after the colon
+        */}
       </h4>
     );
   

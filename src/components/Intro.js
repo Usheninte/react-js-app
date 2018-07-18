@@ -60,7 +60,7 @@ class Intro extends Component {
         {/* <button onClick={() => { alert("I am Usheninte, The African!") }}>  */}
         {/* <button onClick={this.alertUser}> */}
         <button onClick={this.handleClick}>
-          <h4>Click Me!</h4> 
+          <Name /> 
         </button>
         <br />
         {/* <h4><a href="#">Refresh Page</a></h4> */}
