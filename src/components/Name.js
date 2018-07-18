@@ -13,9 +13,9 @@ class Name extends Component {
     console.log('mounted');
   }
 
-  componentWillReceiveProps(nextProps) {
+/*   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
-    if(this.props.user_name!=nextProps.user_name) {
+    if(this.props.user_name != nextProps.user_name) {
       if(nextProps.user_name.indexOf(' ') > -1) {
         this.setState({
           name_displayed: 'Full Name'
@@ -26,7 +26,7 @@ class Name extends Component {
         });
       }
     }
-  }
+  } */
 
   render() {
     
@@ -45,7 +45,7 @@ class Name extends Component {
 
     return (
       <div style={finesse}>
-        <p>{name_displayed}</p>
+        {/* <p>{name_displayed}</p> */}
         <h4>{user_name ? user_name : 'Click Me!'}</h4>
         {/* 
           1. if the value before the question mark is true

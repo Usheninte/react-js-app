@@ -29,6 +29,10 @@ class Intro extends Component {
     })
   }
 
+  handleRefresh() {
+    window.location.reload();
+  }
+
   componentDidMount() {
     console.log('mounted');
   }
@@ -50,8 +54,6 @@ class Intro extends Component {
 
     return (
       <div style={finesse}>
-        <h1>Hello</h1>
-        <br />
         <p>My name is</p>
         <Name user_name={this.state.user_name}/>
         <p>... Yeah ...</p>
@@ -62,7 +64,10 @@ class Intro extends Component {
         <button onClick={this.handleClick}>
           <Name /> 
         </button>
-        <br />
+        <br /><br /><br />
+        <button onClick={() => this.handleRefresh()}>
+          <h5>Refresh</h5>
+        </button>
         {/* <h4><a href="#">Refresh Page</a></h4> */}
       </div>
     );
