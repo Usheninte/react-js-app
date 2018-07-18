@@ -53,6 +53,8 @@ class Intro extends Component {
         <h1>Hello</h1>
         <br />
         <p>My name is</p>
+        <Name user_name="Ninte Dangana"/>
+        <p>... Yeah ...</p>
         <h2>{this.state.user_name}</h2>
         <p>I am a {this.state.interest1} & a {this.state.interest2}</p>
         {/* <button onClick={() => { alert("I am Usheninte, The African!") }}>  */}

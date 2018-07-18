@@ -12,10 +12,15 @@ class Name extends Component {
       textAlign: 'center'
     };
 
+    //code below assigns the props value of the Name component to 'user_name'
+    //this makes it possible for the value of 'user_name' as called in the Name component
+    //to be rendered appropriately
+    const { user_name } = this.props;
+
     return (
-      <div style={finesse}>
-        Usheninte
-      </div>
+      <h4 style={finesse}>
+        {user_name}
+      </h4>
     );
   
   }
