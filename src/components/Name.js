@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 class Name extends Component {
 
-  constructor(props) {
+  /* constructor(props) {
     super(props);
     this.state = {
       name_displayed: 'First Name'
     }
-  }
+  } */
 
   componentDidMount() {
     console.log('mounted');
@@ -41,7 +41,8 @@ class Name extends Component {
 
     //code below binds the 'name_displayed' key in the this.state object to this.state
     //this make it possible for it to display its value whenever it is invoked in the Name component
-    const { name_displayed } = this.state;
+    
+    //const { name_displayed } = this.state;
 
     return (
       <div style={finesse}>
