@@ -13,6 +13,10 @@ class Name extends Component {
     console.log('mounted');
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
+
   render() {
     
     var finesse = {
