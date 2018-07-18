@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 class Name extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      name_displayed: 'First Name'
+    }
+  }
+
   componentDidMount() {
     console.log('mounted');
   }
@@ -17,15 +24,20 @@ class Name extends Component {
     //to be rendered appropriately
     const { user_name } = this.props;
 
+    //code below binds the 'name_displayed' key in the this.state object to this.state
+    //this make it possible for it to display its value whenever it is invoked in the Name component
+    const { name_displayed } = this.state;
+
     return (
-      <h4 style={finesse}>
-        {user_name ? user_name : 'No User Here'}
+      <div style={finesse}>
+        <p>{name_displayed}</p>
+        <h4>{user_name ? user_name : 'Click Me!'}</h4>
         {/* 
           1. if the value before the question mark is true
           2. display the value after the question mark
           3. otherwise display the value after the colon
         */}
-      </h4>
+      </div>
     );
   
   }
