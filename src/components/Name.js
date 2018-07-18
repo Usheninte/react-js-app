@@ -15,6 +15,17 @@ class Name extends Component {
 
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
+    if(this.props.user_name!=nextProps.user_name) {
+      if(nextProps.user_name.indexOf(' ') > -1) {
+        this.setState({
+          name_displayed: 'Full Name'
+        });
+      } else {
+        this.setState({
+          name_displayed: 'First Name'
+        });
+      }
+    }
   }
 
   render() {
