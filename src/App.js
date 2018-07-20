@@ -40,6 +40,14 @@ class App extends Component {
             </NavDropdown>
           </Nav>
         </Navbar>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12">
+              <h1>htmlpoems.com</h1>
+              <p>There is Rhythm in Code</p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   
