@@ -17,25 +17,26 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar>
+        <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">React-Bootstrap</a>
+              <a href="#home">htmlpoems</a>
             </Navbar.Brand>
           </Navbar.Header>
-          <Nav>
+          <Nav pullRight>
             <NavItem eventKey={1} href="#">
-              Link
+              Home
             </NavItem>
             <NavItem eventKey={2} href="#">
-              Link
+              Read
             </NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <NavItem eventKey={3} href="#">
+              Search
+            </NavItem>
+            <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
+              <MenuItem eventKey={3.1}>Submit</MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.4}>Separated link</MenuItem>
+              <MenuItem eventKey={3.2}>Contact Us</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar>
