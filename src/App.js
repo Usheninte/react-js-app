@@ -3,17 +3,31 @@ import './App.css';
 
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedOption: ''
+    }
+  }
 
   componentDidMount() {
     console.log('mounted');
   }
 
+  handleChange(selectedOption) {
+    this.setState({ selectedOption });
+    // selectedOption can be null when the `x` (close) button is clicked
+    /* if (selectedOption) {
+      console.log(`Selected: ${selectedOption.label}`);
+    } */
+  }
+
   render() {
-    
-    /* var finesse = {
-      textAlign: 'center'
-    }; */
 
     return (
       <div>
@@ -46,6 +60,15 @@ class App extends Component {
               <h1>htmlpoems.com</h1>
               <p>There is Rhythm in Code</p>
             </div>
+            <Select
+              name="form-field-name"
+              value={this.state.selectedOption}
+              onChange={this.handleChange.bind(this)}
+              options={[
+                { value: 'one', label: 'One' },
+                { value: 'two', label: 'Two' },
+              ]}
+            />
           </div>
         </div>
       </div>
