@@ -16,7 +16,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('mounted');
+    fetch('./json/MOCK_DATA.json')
+    .then(response => response.json())
+    .then(json => {
+     	console.log(json)
+    })
+    .catch(error => console.log(error));
   }
 
   handleChange(selectedOption) {
@@ -37,7 +42,7 @@ class App extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">htmlpoems</a>
+              <a href="#home">poetrique</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
@@ -60,8 +65,8 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <h1>htmlpoems.com</h1>
-              <p>There is Rhythm in Code</p>
+              <h1>poetrique.com</h1>
+              <p><em>ARTIS SUPER OMNIA</em></p>
             </div>
             <Select
               name="form-field-name"
