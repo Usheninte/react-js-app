@@ -20,7 +20,10 @@ class App extends Component {
   }
 
   handleChange(selectedOption) {
-    this.setState({ selectedOption });
+    this.setState({ 
+      selectedOption :
+      selectedOption ? selectedOption : ''
+    });
     // selectedOption can be null when the `x` (close) button is clicked
     /* if (selectedOption) {
       console.log(`Selected: ${selectedOption.label}`);
@@ -62,7 +65,7 @@ class App extends Component {
             </div>
             <Select
               name="form-field-name"
-              value={this.state.selectedOption}
+              value={this.state.selectedOption.value}
               onChange={this.handleChange.bind(this)}
               options={[
                 { value: 'one', label: 'One' },
