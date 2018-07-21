@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import '../App.css';
-
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Table }  from 'react-bootstrap';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+
+import { fetchInfo } from '../actions/actions_info';
 
 class App extends Component {
 
@@ -12,77 +11,92 @@ class App extends Component {
     super(props);
     this.state = {
       selectedOption: ''
-    }
+    };
   }
 
   componentDidMount() {
-/*     fetch('./json/MOCK_DATA.json')
-    .then(response => response.json())
-    .then(json => {
-     	console.log(json)
-    })
-    .catch(error => console.log(error)); */
-    console.log("mounted");
+    this.props.dispatch(fetchInfo());
   }
 
   handleChange(selectedOption) {
-    this.setState({ 
-      selectedOption :
-      selectedOption ? selectedOption : ''
+    this.setState({
+      selectedOption :  selectedOption ? selectedOption : ''
     });
-    // selectedOption can be null when the `x` (close) button is clicked
-    /* if (selectedOption) {
-      console.log(`Selected: ${selectedOption.label}`);
-    } */
   }
 
   render() {
+
+    const selectList = this.props.info.map(item => {
+      return { value : item.name, label : item.name }
+    });
 
     return (
       <div>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">poetrique</a>
+              <a href="#">Victory Page!</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">
-              Home
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              Read
-            </NavItem>
-            <NavItem eventKey={3} href="#">
-              Search
-            </NavItem>
-            <NavDropdown eventKey={3} title="More" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Submit</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.2}>Contact Us</MenuItem>
+            <NavItem eventKey={1} href="#">Home</NavItem>
+            <NavDropdown eventKey={3} title="Data Views" id="basic-nav-dropdown">
+              <MenuItem eventKey={3.1}>List</MenuItem>
+              <MenuItem eventKey={3.2}>Search</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar>
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-              <h1>poetrique.com</h1>
-              <p><em>ARTIS SUPER OMNIA</em></p>
+              <h1>Victory page</h1>
+              <p>Here we'll list some data from a bunch of smokin' sources!</p>
+              <div className="row">
+                <div className="col-sm-3">
+                  <Select
+                    name="form-field-name"
+                    value={this.state.selectedOption.value}
+                    onChange={this.handleChange.bind(this)}
+                    options={selectList}
+                  />
+                </div>
+              </div>
+              <hr />
+              <div className="row">
+                <div className="col-sm-9">
+                  <Table striped bordered condensed hover>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Age</th>
+                        <th>Company</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.props.info.map(item => {
+                        console.log(this.state.selectedOption)
+                        if(this.state.selectedOption===''||item.name===this.state.selectedOption.value) {
+                          return (
+                            <tr key={"item-"+item.name}>
+                              <td>{item.name}</td>
+                              <td>{item.address}</td>
+                              <td>{item.age}</td>
+                              <td>{item.company}</td>
+                            </tr>
+                          )
+                        }
+                      })}
+                    </tbody>
+                  </Table>
+                </div>
+              </div>
             </div>
-            <Select
-              name="form-field-name"
-              value={this.state.selectedOption.value}
-              onChange={this.handleChange.bind(this)}
-              options={[
-                { value: 'one', label: 'One' },
-                { value: 'two', label: 'Two' },
-              ]}
-            />
           </div>
         </div>
       </div>
     );
-  
+
   }
 }
 
