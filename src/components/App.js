@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
@@ -16,12 +16,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('./json/MOCK_DATA.json')
+/*     fetch('./json/MOCK_DATA.json')
     .then(response => response.json())
     .then(json => {
      	console.log(json)
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error)); */
+    console.log("mounted");
   }
 
   handleChange(selectedOption) {
