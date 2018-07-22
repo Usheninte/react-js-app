@@ -35,7 +35,7 @@ class App extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Victory Page!</a>
+              <a href="http://localhost:3000">Victory Page!</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
